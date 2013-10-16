@@ -1,0 +1,8 @@
+function decodeBase64IntoPdf([string]$base64EncodedString)
+{
+    $bytes = [System.Convert]::FromBase64String($base64EncodedString)
+
+    [IO.File]::WriteAllBytes("C:\Users\medmondson\Desktop\file.pdf", $bytes)
+}
+
+decodeBase64IntoPdf("base64StringHere")
